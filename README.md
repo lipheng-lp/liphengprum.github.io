@@ -1,4 +1,4 @@
-# lipheng-lp.github.io
+# liphengprum.github.io
 
 Personal academic site. Plain HTML/CSS, no build step, no dependencies.
 
@@ -55,12 +55,12 @@ ffmpeg -i INPUT.mp4 -vf "scale='min(1280,iw)':-2" -c:v libx264 -crf 26 \
 The repo is initialized and committed locally, with `user.name` and `user.email` set
 per-repo so commits are not attributed to this machine's global `camtechailab` identity.
 
-1. On github.com create a **public** repo named exactly `lipheng-lp.github.io`.
+1. On github.com create a **public** repo named exactly `liphengprum.github.io`.
    Leave it empty, with no README, no license and no .gitignore.
 2. Then:
 
    ```
-   git remote add origin https://github.com/lipheng-lp/lipheng-lp.github.io.git
+   git remote add origin https://github.com/lipheng-lp/liphengprum.github.io.git
    git push -u origin main
    ```
 
