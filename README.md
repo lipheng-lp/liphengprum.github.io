@@ -60,12 +60,12 @@ per-repo so commits are not attributed to this machine's global `camtechailab` i
 2. Then:
 
    ```
-   git remote add origin https://github.com/lipheng-lp/liphengprum.github.io.git
+   git remote add origin https://github.com/liphengprum/liphengprum.github.io.git
    git push -u origin main
    ```
 
 3. In the repo, go to Settings, then Pages. Set Source to **Deploy from a branch**, branch `main`, folder `/ (root)`.
-4. Live at <https://lipheng-lp.github.io> within a couple of minutes.
+4. Live at <https://liphengprum.github.io> within a couple of minutes.
 
 Every later `git push` redeploys automatically.
 
