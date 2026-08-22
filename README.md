@@ -60,8 +60,7 @@ Every document below is linked live from the page. Nothing is public until you p
    is allowed and that neither it nor `assets/Supplementary.mp4` carries a venue
    watermark or submission ID.
 
-5. **DOI.** The CV lists `10.1109/ICSEC56337.2022`, which looks truncated. IEEE DOIs
-   normally end in an article number. Confirm the link resolves and fix it if not.
+5. **DOI.** Corrected to `10.1109/ICSEC56337.2022.10049335`, the full article DOI.
 
 ## Deploy
 
@@ -73,12 +72,12 @@ per-repo so commits are not attributed to this machine's global `camtechailab` i
 2. Then:
 
    ```
-   git remote add origin https://github.com/liphengprum/liphengprum.github.io.git
+   git remote add origin https://github.com/lipheng-lp/liphengprum.github.io.git
    git push -u origin main
    ```
 
 3. In the repo, go to Settings, then Pages. Set Source to **Deploy from a branch**, branch `main`, folder `/ (root)`.
-4. Live at <https://liphengprum.github.io> within a couple of minutes.
+4. Live at <https://lipheng-lp.github.io/liphengprum.github.io/> within a couple of minutes.
 
 Every later `git push` redeploys automatically.
 
