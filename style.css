@@ -1,0 +1,224 @@
+/* ---- tokens -------------------------------------------------- */
+:root {
+  --bg:        #fdfdfc;
+  --surface:   #ffffff;
+  --text:      #1a1a18;
+  --muted:     #63635c;
+  --line:      #e3e3dd;
+  --accent:    #9a4a2b;
+  --badge-bg:  #f2ede6;
+  --maxw:      44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:       #161614;
+    --surface:  #1e1e1b;
+    --text:     #e8e8e2;
+    --muted:    #9a9a90;
+    --line:     #33332e;
+    --accent:   #e08b62;
+    --badge-bg: #2a2a25;
+  }
+}
+
+/* ---- base ---------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+
+h1, h2, h3 { line-height: 1.25; letter-spacing: -0.015em; }
+h1 { font-size: 1.9rem; margin: 0 0 .35rem; }
+h2 {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--line);
+}
+h3 { font-size: 1.02rem; margin: 0 0 .3rem; }
+
+/* ---- header -------------------------------------------------- */
+.site-head {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.25rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: .9rem 1.5rem;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-weight: 600; color: var(--text); text-decoration: none; }
+.site-head nav { display: flex; gap: 1.1rem; font-size: .9rem; }
+.site-head nav a { color: var(--muted); text-decoration: none; }
+.site-head nav a:hover { color: var(--accent); }
+
+/* ---- layout -------------------------------------------------- */
+main { max-width: var(--maxw); margin: 0 auto; padding: 3rem 1.5rem; }
+section + section { margin-top: 3.25rem; }
+section { scroll-margin-top: 5rem; }
+
+.intro { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+.avatar {
+  width: 108px; height: 108px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+.tagline { color: var(--muted); margin: 0 0 .7rem; }
+.links { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0; font-size: .93rem; }
+
+.lede { font-size: 1.08rem; margin: 0; }
+
+/* ---- cards --------------------------------------------------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+}
+.card p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+/* ---- publications -------------------------------------------- */
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pubs > li { padding: 1.15rem 0; border-bottom: 1px solid var(--line); }
+.pubs > li:first-child { padding-top: 0; }
+.pubs > li:last-child { border-bottom: 0; }
+.authors, .venue { margin: .15rem 0; font-size: .93rem; color: var(--muted); }
+.authors strong { color: var(--text); }
+.badge {
+  display: inline-block;
+  margin-left: .4rem;
+  padding: .08rem .5rem;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  font-size: .74rem;
+  letter-spacing: .02em;
+  color: var(--muted);
+}
+.pub-links { margin: .45rem 0 0; font-size: .9rem; }
+
+/* ---- footer -------------------------------------------------- */
+footer {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .87rem;
+}
+footer p { margin: 0; }
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.6rem; }
+  .intro { gap: 1rem; }
+  .avatar { width: 84px; height: 84px; }
+}
+
+/* ---- timeline (experience + education) ----------------------- */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline > li {
+  position: relative;
+  padding: 0 0 1.6rem 1.1rem;
+  border-left: 1px solid var(--line);
+}
+.timeline > li:last-child { padding-bottom: 0; border-left-color: transparent; }
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  left: -4px; top: .55rem;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.timeline .when {
+  margin: 0;
+  font-size: .78rem;
+  letter-spacing: .04em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.timeline h3 { margin: .1rem 0 .1rem; }
+.timeline .where { margin: 0 0 .4rem; font-size: .92rem; color: var(--muted); font-style: italic; }
+.timeline > li > p:last-child { margin: 0; font-size: .95rem; }
+
+/* ---- skills -------------------------------------------------- */
+.skills {
+  display: grid;
+  grid-template-columns: minmax(9rem, 12rem) 1fr;
+  gap: .55rem 1.5rem;
+  margin: 0;
+  font-size: .95rem;
+}
+.skills dt { font-weight: 600; }
+.skills dd { margin: 0; color: var(--muted); }
+
+/* ---- misc ---------------------------------------------------- */
+.plain { list-style: none; margin: 0; padding: 0; font-size: .95rem; }
+.plain li { padding-left: 1rem; text-indent: -1rem; margin-bottom: .45rem; }
+.plain li::before { content: "▸"; color: var(--accent); margin-right: .5rem; }
+.plain li strong { color: var(--text); }
+
+h2.sub { margin-top: 2rem; }
+.muted { color: var(--muted); font-size: .95rem; }
+
+@media (max-width: 560px) {
+  .skills { grid-template-columns: 1fr; gap: .15rem; }
+  .skills dd { margin-bottom: .6rem; }
+  .site-head { padding: .75rem 1rem; }
+  .site-head nav { gap: .85rem; font-size: .82rem; }
+}
+
+/* ---- research statement -------------------------------------- */
+.statement {
+  margin: 0 0 1.4rem;
+  padding-left: .9rem;
+  border-left: 2px solid var(--accent);
+  font-size: 1.03rem;
+}
+
+/* ---- featured work ------------------------------------------- */
+.feature-title { font-size: 1.15rem; margin: 0 0 .35rem; }
+#work > p, #engineering > p { font-size: .97rem; }
+
+.media {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.4rem;
+}
+.media figure { margin: 0; }
+.media video {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #000;
+}
+.media figcaption {
+  margin-top: .4rem;
+  font-size: .84rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
