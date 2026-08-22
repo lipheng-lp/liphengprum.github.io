@@ -27,27 +27,30 @@ ffmpeg -i INPUT.mp4 -vf "scale='min(1280,iw)':-2" -c:v libx264 -crf 26 \
 
 ## Before you publish
 
-1. **Do not put `Conference Paper.pdf` on the site.** Only pages 1 to 5 are the ICSEC
-   paper. Pages 6 to 18 are a Turnitin originality report carrying a submission ID, and
-   pages 19 and 20 are a signed KMITL certification form with your handwritten signature
-   and Asst. Prof. Dr. Rutchanee Gullayanon's. If you want the paper linked, extract
-   pages 1 to 5 into a separate file first.
+1. **Your CV carries three mobile numbers.** `assets/Lipheng_Prum_CV.pdf` is the full
+   CV and is linked live from the header. Page 2 lists your own number
+   (+855-69-496-175) and, under References, the personal mobiles and emails of
+   Prof. John Morris (+66 086-224-9239) and Asst. Prof. Dr. May Thu (+855 15 559 050).
+   Your own number is your call. Theirs is not: they did not agree to have it
+   scraped off a public page. Recommended fix is to save a copy of the CV with the
+   References section deleted, overwrite `assets/Lipheng_Prum_CV.pdf` with it, and
+   keep the full version for applications only.
 
-2. **Check the supplementary video.** It belongs to a manuscript whose PDF shows no
-   author names, which usually means an anonymized submission copy. Confirm it carries
-   no venue watermark or submission ID before pushing. If unsure, delete it from
-   `assets/` and remove its `<figure>` from `index.html`.
+2. **The transcripts are deliberately not on the site.**
+   `assets/degree-certificates.pdf` holds only the two certificates: the Chaiyaphum
+   Rajabhat bachelor's and the KMITL master's. The transcript pages of the source PDF
+   were left out because they carry your date of birth (29 January 1995) and Cambodian
+   personal ID (KHL-P19950129). Name plus date of birth plus national ID on a public
+   page is the standard identity-fraud bundle. Send the transcripts privately when an
+   application asks for them.
 
-3. **The manuscript PDF is deliberately not linked.** Preprints are allowed at RA-L,
-   ICRA and IROS, but whether yours goes up now depends on where it sits in review.
+3. **Check the manuscript and supplementary video before pushing.**
+   `assets/precision-curricula-manuscript.pdf` shows no author names, which usually
+   means an anonymized submission copy. If it is under review somewhere, confirm that
+   posting it is allowed and that neither it nor `assets/Supplementary.mp4` carries a
+   venue watermark or submission ID.
 
-4. **CV PDF.** The link is commented out in `index.html`. Your CV carries your mobile
-   number *and* the personal emails and phone numbers of Prof. John Morris and
-   Asst. Prof. Dr. May Thu. Publishing it puts their contact details on the open web
-   where scrapers will collect them. Make a public variant with the References section
-   and the phone numbers removed, save it as `assets/cv.pdf`, then uncomment the link.
-
-5. **DOI.** The CV lists `10.1109/ICSEC56337.2022`, which looks truncated. IEEE DOIs
+4. **DOI.** The CV lists `10.1109/ICSEC56337.2022`, which looks truncated. IEEE DOIs
    normally end in an article number. Confirm the link resolves and fix it if not.
 
 ## Deploy
