@@ -215,3 +215,8 @@ h2.sub { margin-top: 2rem; }
   line-height: 1.5;
   color: var(--muted);
 }
+
+/* ---- student mentorship -------------------------------------- */
+#mentorship .pubs > li { padding: 1.7rem 0 2.1rem; }
+#mentorship article > p:not(.authors):not(.venue):not(.pub-links) { font-size: .97rem; }
+#mentorship .badge { margin-left: .15rem; }

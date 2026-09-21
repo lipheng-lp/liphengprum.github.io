@@ -14,6 +14,7 @@
   <a class="brand" href="#top">Lipheng Prum</a>
   <nav>
     <a href="#interests">Research</a>
+    <a href="#mentorship">Mentorship</a>
     <a href="#work">Current work</a>
     <a href="#engineering">Engineering</a>
     <a href="#publications">Publications</a>
@@ -34,27 +35,118 @@
         <a href="mailto:lipheng.lp@gmail.com">Email</a>
         <a href="https://github.com/lipheng-lp">GitHub</a>
         <a href="https://www.linkedin.com/in/lipheng-prum-61569b156">LinkedIn</a>
-        <a href="assets/Lipheng_Prum_CV.pdf">CV</a>
+        <a href="assets/Lipheng_Prum_Academic_CV.pdf">CV</a>
       </p>
     </div>
   </section>
 
-  <section>
+  <section id="interests">
     <p class="lede">
-      I work on robot learning and the sim-to-real gap for dexterous manipulation.
-      Five years of industrial work in embedded C/C++, STM32 firmware, ROS 2, and
-      PLC-based robot control sits underneath the research: I read policy learning
-      algorithms against real hardware constraints, control loops, and sensor dynamics
-      rather than as abstract computational graphs.
+      I am a Lecturer in Robotics and Automation. My background combines a master's degree
+      in Robotics and Computational Intelligence Systems with industry experience in
+      industrial automation, computer vision, and IoT development, and my work spans
+      teaching, applied research, and hands-on engineering. My research aims to develop
+      intelligent robotic systems that adapt to and operate reliably in unstructured
+      environments.
     </p>
   </section>
 
-  <section id="interests">
-    <h2>Research interests</h2>
-    <p class="statement">
-      My research interests are robot learning, dexterous in-hand manipulation,
-      vision-guided robot control, computer vision, robotics and intelligent systems.
+  <section id="mentorship">
+    <h2>Student mentorship</h2>
+    <p class="muted" style="margin:-0.5rem 0 1.6rem">
+      Undergraduate projects I supervise at CamTech.
     </p>
+
+    <ol class="pubs">
+      <li>
+        <article>
+          <h3>Integration of Robotic Arm with Vision System for Real-Time Fruit Quality
+            Inspection and Automated Sorting</h3>
+          <p class="authors"><strong>Chao Foekfath</strong> <span class="badge">supervised project</span></p>
+          <p class="venue">ABB GoFa CRB 15000 &middot; YOLO26n-OBB &middot; planar homography &middot; RobotStudio</p>
+          <p>
+            A vision-guided robotic workcell that grades fruit ripeness and sorts it without
+            bruising the produce. It combines an ABB GoFa CRB 15000 collaborative robot, an
+            overhead Logitech Brio camera, and a custom articulated electric gripper. Three
+            parts were built: an oriented bounding box vision pipeline using YOLO26n-OBB with
+            multi-frame temporal stabilisation, which classifies six agricultural classes and
+            predicts a 2D grasp yaw angle without the latency of segmentation masks; a planar
+            homography calibration over nine ArUco markers that maps undistorted pixels
+            directly into the robot work-object frame, with no visual servoing; and an
+            asynchronous Python-to-RAPID socket protocol with command memory locking that
+            drives the arm and gripper without altering the robot's internal motion kernel.
+          </p>
+          <p>
+            Inference ran in 12.4&nbsp;ms inside a 30&nbsp;FPS acquisition loop. Across 150
+            sorting trials the cell reached a 92.7% planar positioning pass rate
+            (&le;&nbsp;5.0&nbsp;mm, mean error 2.426&nbsp;mm) and yaw orientation accuracy
+            within 5.0&deg;, with an overall detection mAP@0.5 of 82.61% and an end-to-end
+            cycle time of 6.77&nbsp;s per fruit.
+          </p>
+          <p class="venue"><em>Keywords:</em> vision-guided robotics, automated fruit sorting,
+            ABB GoFa CRB 15000, YOLO26n-OBB, planar homography, RobotStudio</p>
+          <div class="media">
+            <figure>
+              <video controls preload="metadata" playsinline>
+                <source src="assets/01_2026_studentMentorship.mp4" type="video/mp4">
+              </video>
+              <figcaption>The sorting workcell running end to end.</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" playsinline>
+                <source src="assets/02_2026_studentMetorship.MP4" type="video/mp4">
+              </video>
+              <figcaption>Ripeness detection and grasp yaw prediction from the overhead camera.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </li>
+
+      <li>
+        <article>
+          <h3>Nav2 Route Planning and 3D Voxel-Based Perception for Infrastructure
+            Inspection using Clearpath Husky A200</h3>
+          <p class="authors"><strong>Sea Sokchamroeun</strong> <span class="badge">supervised project</span></p>
+          <p class="venue">ROS 2 &middot; Nav2 &middot; Spatio-Temporal Voxel Layer &middot; Gazebo</p>
+          <p>
+            An autonomous floor-coverage and 3D perception system for indoor infrastructure
+            inspection, built on ROS&nbsp;2 and Nav2. A saved 2D occupancy map is converted
+            into a turn-minimising Boustrophedon Cellular Decomposition (BCD) sweep and
+            executed under closed-loop trajectory control, while a Spatio-Temporal Voxel
+            Layer (STVL) fed by a 3D LiDAR maintains a live obstacle model that catches
+            overhead hazards.
+          </p>
+          <p>
+            Two Gazebo platforms were evaluated against ground truth. A TurtleBot3 Burger held
+            3.23&nbsp;cm mean lateral tracking error, past the 10&nbsp;cm target, and a
+            Clearpath Husky A200 reached 6.8&nbsp;cm across ten runs. BCD was benchmarked
+            against the Backtracking Spiral Algorithm on identical maps. The central finding
+            is that room geometry and usable sensor range predict localisation failure:
+            removing the predicted blind zone cut localisation-error anisotropy from 4.5 to
+            1.05 and reduced mean error fivefold. LiDAR-inertial 3D mapping and robotic-arm
+            coordination were descoped to keep the focus on navigation precision and 3D
+            obstacle avoidance.
+          </p>
+          <p class="venue"><em>Keywords:</em> coverage path planning, Boustrophedon cellular
+            decomposition, Nav2, Spatio-Temporal Voxel Layer, 3D perception, localisation,
+            indoor inspection robot</p>
+          <div class="media">
+            <figure>
+              <video controls preload="metadata" playsinline>
+                <source src="assets/10_2026_studentMentorship.mp4" type="video/mp4">
+              </video>
+              <figcaption>Coverage sweep executed under Nav2 trajectory control.</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" playsinline>
+                <source src="assets/11_2026_studentMentorship.mp4" type="video/mp4">
+              </video>
+              <figcaption>3D voxel obstacle model from the Spatio-Temporal Voxel Layer.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </li>
+    </ol>
   </section>
 
   <section id="work">
